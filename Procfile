@@ -1,0 +1,1 @@
+web: gunicorn ci-i-think-blog.wsgi
