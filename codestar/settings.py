@@ -31,8 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-welshdan-djangoblog-4oyn94iuaf.us2.codeanyapp.com',
-    'ci-i-think.herokuapp.com',
-    'localhost']
+    'ci-i-think.herokuapp.com']
 
 
 # Application definition
@@ -45,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary'
+    'cloudinary',
+    'django_summernote',
     'blog',
 ]
 
