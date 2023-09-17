@@ -22,6 +22,7 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -30,16 +31,20 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://ci-i-think-blog-336c4e6e70f1.herokuapp.com/',
+    'https://8000-welshdan-djangoblog-4oyn94iuaf.us2.codeanyapp.com/accounts/login/'
+]
 
 ALLOWED_HOSTS = [
     '8000-welshdan-djangoblog-4oyn94iuaf.us2.codeanyapp.com',
     'ci-i-think-blog.herokuapp.com',
-    'ci-i-think-blog-336c4e6e70f1.herokuapp.com/'
+    'ci-i-think-blog-336c4e6e70f1.herokuapp.com',
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-
 
 # Application definition
 
@@ -157,17 +162,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-ACCOUNT_EMAIL_VERIFICATION = 'none'
