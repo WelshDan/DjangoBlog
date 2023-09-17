@@ -35,7 +35,7 @@ DEBUG = True
 
 CSRF_TRUSTED_ORIGINS = [
     'https://ci-i-think-blog-336c4e6e70f1.herokuapp.com/',
-    'https://8000-welshdan-djangoblog-4oyn94iuaf.us2.codeanyapp.com/accounts/login/'
+    'https://8000-welshdan-djangoblog-4oyn94iuaf.us2.codeanyapp.com'
 ]
 
 ALLOWED_HOSTS = [
