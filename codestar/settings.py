@@ -30,15 +30,17 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-welshdan-djangoblog-4oyn94iuaf.us2.codeanyapp.com',
     'ci-i-think-blog.herokuapp.com',
-    'ci-i-think-blog-336c4e6e70f1.herokuapp.com',
-    'localhost']
+    'ci-i-think-blog-336c4e6e70f1.herokuapp.com/'
+]
 
-X_FRAME_OPTION = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -157,7 +159,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
